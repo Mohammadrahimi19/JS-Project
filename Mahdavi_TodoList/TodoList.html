@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>TodoList</title>
+</head>
+
+<body>
+    <style>
+        *{
+            transition: all 0.5s;
+        }
+
+    </style>
+    <div class="flex flex-col gap-5">
+        <div class="container bg-green-300  relative mt-20  rounded-lg p-5">
+            <h1 class="text-5xl text-orange-500 text-center font-bold ">TodoLisTApp FOR Mahdavi</h1>
+            <div class="w-full">
+                <div class="flex gap-5 items-center p-2 w-full" id="Buttons">
+                    <label class="w-fit font-bold " for="TodoInput">Add your new work :</label>
+                    <input class="w-3/4 h-12 indent-3 focus:outline-none    rounded-lg " type="text" name="TodoInput"
+                        id="TodoInput">
+                </div>
+                <div class="flex gap-5 p-2 " id="Buttons">
+                    <button id="add"
+                        class="w-52 h-12 border-none rounded-xl bg-green-600   text-white hover:bg-slate-200 hover:text-green-600 transition  duration-700  ">ADD</button>
+                    <button id="ramoveAll"
+                        class="w-52 h-12  rounded-xl bg-red-600  text-white hover:bg-slate-200 hover:text-red-600  transition  duration-700">Remove
+                        All Todo Objecct</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="TodoBox" class="container flex flex-col gap-3   ">
+    
+        </div>
+    </div>
+
+    <script defer src="./TodoList.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="textinput">
+    <button class="btn">Enter</button>
+    <p class="text"></p>
+
+
+    <script>
+        var text = document.querySelector('.text')
+        var textinput = document.querySelector('#textinput')
+        var btn = document.querySelector('.btn')
+        function checkvalue() {
+            try {
+                if (textinput.value.length > 8) {
+                    throw 'to high'
+                }
+                else {
+                    throw 'to low'
+                }
+            }
+            catch (err) {
+                text.innerHTML = err
+            } finally {
+                textinput.value = ''
+            }
+        }
+        btn.addEventListener('click', checkvalue)
+    </script>
+</body>
+
+</html>

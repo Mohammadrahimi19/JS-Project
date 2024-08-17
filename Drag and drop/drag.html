@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #drop {
+        width: 500px;
+        height: 500px;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+    <h1 id="React" draggable="true" ondragstart="dragStrat(event)">React</h1>
+    <h1 id="veu" draggable="true" ondragstart="dragStrat(event)">Veu</h1>
+    <h1 id="Angular" draggable="true" ondragstart="dragStrat(event)">Angular</h1>
+
+
+    <div id="drop" ondrop="dropHandler(event)" ondragover="dargoverHandler(event)"></div>
+    <script defer>
+        function dragStrat(event) {
+            event.dataTransfer.setData('elemId', event.target.id)   /////////////////// گرفتن آی ذی تارگتمون و ست کردن ان در دیتا ترنسفر بااسم elemId
+
+        }
+        function dropHandler(event) {
+            var elemId = event.dataTransfer.getData('elemId')  //////////////// گرفتن آی دی از دیتا ترنسفر
+            var targetItem = document.querySelector(`#${elemId}`)/////////////// گرفتن دام تارگتمون
+            event.target.append(targetItem)//////////////////اضافه کردنش به محیط دراپ
+        }
+        function dargoverHandler(event) {/////////////////////////برای اینکه دراپ کار کنه باید دراپ اور رو از حالت پیش فرض در بیاریم
+            event.preventDefault();
+        }
+    </script>
+</body>
+
+</html>
